@@ -1,5 +1,6 @@
-using UnityEngine;
 using System;
+using TMPro;
+using UnityEngine;
 
 public class CubeGenerateScript : MonoBehaviour
 {
@@ -35,6 +36,10 @@ public class CubeGenerateScript : MonoBehaviour
         else instantiatedCubePositionTransform = cubeStartingPositionRight.position;
 
         GameObject instantiatedCube = Instantiate(cube, instantiatedCubePositionTransform + new Vector3(0, 0, offset), Quaternion.identity);
+        
+        // Display a random character on the cube 
+        char charNo = (char)UnityEngine.Random.Range(65, 91);
+        instantiatedCube.GetComponentInChildren<TextMeshProUGUI>().text = charNo.ToString();
 
         if ((rand == 0) && isPositionRight) instantiatedCube.tag = "Right Cube0";
         else if((rand == 0) && !isPositionRight) instantiatedCube.tag = "Left Cube0";
