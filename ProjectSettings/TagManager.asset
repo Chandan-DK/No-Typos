@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Right Cube0
+  - Right Cube1
+  - Right Cube2
+  - Right Cube3
+  - Left Cube0
+  - Left Cube1
+  - Left Cube2
+  - Left Cube3
   layers:
   - Default
   - TransparentFX
