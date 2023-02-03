@@ -18,10 +18,47 @@ public class CubeGenerateScript : MonoBehaviour
     [SerializeField]
     private float zOffset;
 
+    [SerializeField]
+    private float spawnafterSec;
+
+    private float timeInSec;
+
+    private float timeElapsed;
+    private int noOfTimesSpawnSpeedDecreased;
+
+    private TimerScript timerScript;
+
+    void Start()
+    {
+        timerScript = GameObject.FindObjectOfType<TimerScript>();
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space)) InstantiateCube();
+        timeInSec += Time.deltaTime;
+        timeElapsed += Time.deltaTime;
+
+        if (timeInSec >= spawnafterSec)
+        {
+            InstantiateCube();
+            timeInSec = 0;
+        }
+
+        if (noOfTimesSpawnSpeedDecreased <= 5)
+        {
+            if (timeElapsed >= timerScript.increaseSpeedAfterSec)
+            {
+                if (noOfTimesSpawnSpeedDecreased < 2) spawnafterSec--;
+                else if (noOfTimesSpawnSpeedDecreased == 2) spawnafterSec = 0.9f;
+                else if (noOfTimesSpawnSpeedDecreased == 3) spawnafterSec = 0.8f;
+                else if (noOfTimesSpawnSpeedDecreased == 4) spawnafterSec = 0.7f;
+                else if (noOfTimesSpawnSpeedDecreased == 5) spawnafterSec = 0.5f;
+                else if (noOfTimesSpawnSpeedDecreased == 6) spawnafterSec = 0.3f;
+                noOfTimesSpawnSpeedDecreased++;
+                timeElapsed = 0;
+            }
+        }
     }
 
     private void InstantiateCube()
@@ -36,13 +73,13 @@ public class CubeGenerateScript : MonoBehaviour
         else instantiatedCubePositionTransform = cubeStartingPositionRight.position;
 
         GameObject instantiatedCube = Instantiate(cube, instantiatedCubePositionTransform + new Vector3(0, 0, offset), Quaternion.identity);
-        
+
         // Display a random character on the cube 
         char charNo = (char)UnityEngine.Random.Range(65, 91);
         instantiatedCube.GetComponentInChildren<TextMeshProUGUI>().text = charNo.ToString();
 
         if ((rand == 0) && isPositionRight) instantiatedCube.tag = "Right Cube0";
-        else if((rand == 0) && !isPositionRight) instantiatedCube.tag = "Left Cube0";
+        else if ((rand == 0) && !isPositionRight) instantiatedCube.tag = "Left Cube0";
         else if ((rand == 1) && isPositionRight) instantiatedCube.tag = "Right Cube1";
         else if ((rand == 1) && !isPositionRight) instantiatedCube.tag = "Left Cube1";
         else if ((rand == 2) && isPositionRight) instantiatedCube.tag = "Right Cube2";
