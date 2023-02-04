@@ -3,6 +3,9 @@ using UnityEngine;
 
 public class DestroyCubeFromInputScript : MonoBehaviour
 {
+    [SerializeField]
+    private ParticleSystem particles;
+
     public void DestroyCube(char character)
     {
         CubeMoveScript[] cubes = GameObject.FindObjectsOfType<CubeMoveScript>();
@@ -14,6 +17,8 @@ public class DestroyCubeFromInputScript : MonoBehaviour
 
             if (text.Equals(character.ToString().ToUpper()))
             {
+                ParticleSystem instantiatedParticle = Instantiate(particles, cube.transform.position, Quaternion.identity);
+                instantiatedParticle.Play();
                 Destroy(cube.gameObject);
                 break;
             }
