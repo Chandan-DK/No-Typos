@@ -27,6 +27,27 @@ public class DisplayTimeScript : MonoBehaviour
             secPassed = 0;
         }
 
-        timerText.text = $"{minPassed}:{(int)secPassed}";
+        if (minPassed < 10)
+        {
+            if (secPassed < 10)
+            {
+                timerText.text = $"0{minPassed}:0{(int)secPassed}";
+            }
+            else
+            {
+                timerText.text = $"0{minPassed}:{(int)secPassed}";
+            }
+        }
+        else
+        {
+            if (secPassed < 10)
+            {
+                timerText.text = $"{minPassed}:0{(int)secPassed}";
+            }
+            else
+            {
+                timerText.text = $"{minPassed}:{(int)secPassed}";
+            }
+        }
     }
 }
