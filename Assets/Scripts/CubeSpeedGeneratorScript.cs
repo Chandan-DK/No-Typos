@@ -14,6 +14,6 @@ public class CubeSpeedGeneratorScript : MonoBehaviour
     void Start()
     {
         speeds = new float[8];
-        for(int i = 0; i < 8; i++) speeds[i] = Random.Range(minSpeed, maxSpeed);
+        for (int i = 0; i < 8; i++) speeds[i] = Random.Range(minSpeed, maxSpeed);
     }
 }
