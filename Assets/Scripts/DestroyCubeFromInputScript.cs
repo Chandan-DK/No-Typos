@@ -19,6 +19,7 @@ public class DestroyCubeFromInputScript : MonoBehaviour
             {
                 ParticleSystem instantiatedParticle = Instantiate(particles, cube.transform.position, Quaternion.identity);
                 instantiatedParticle.Play();
+                CameraShakeScript.Invoke();
                 Destroy(cube.gameObject);
                 break;
             }
