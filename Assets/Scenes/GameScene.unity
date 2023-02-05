@@ -986,6 +986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92305c6077664004eaa07b3332f70191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 5985678737798792434, guid: 8e103317c1f1aa64a83d80257b172b91,
+    type: 3}
 --- !u!1 &708110441
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,6 +1099,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 92305c6077664004eaa07b3332f70191, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particle: {fileID: 5985678737798792434, guid: 8e103317c1f1aa64a83d80257b172b91,
+    type: 3}
 --- !u!54 &708110447
 Rigidbody:
   m_ObjectHideFlags: 0
