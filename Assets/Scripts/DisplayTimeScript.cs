@@ -7,8 +7,10 @@ public class DisplayTimeScript : MonoBehaviour
     private TextMeshProUGUI timerText;
     private TimerScript timerScript;
 
-    private float secPassed;
-    private float minPassed;
+    [HideInInspector]
+    public float secPassed;
+    [HideInInspector]
+    public int minPassed;
 
     // Start is called before the first frame update
     void Start()
