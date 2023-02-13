@@ -1,10 +1,13 @@
 using TMPro;
 using UnityEngine;
 
-public class DisplayTimeSurvivedScript : MonoBehaviour
+public class DisplayScoreAndTimeSurvivedScript : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI timeText;
+
+    [SerializeField]
+    private TextMeshProUGUI playerScoreText;
 
     [SerializeField]
     private TimeScriptableObject timeScriptableObject;
@@ -13,5 +16,6 @@ public class DisplayTimeSurvivedScript : MonoBehaviour
     void Start()
     {
         timeText.text = $"{timeScriptableObject.min} min {(int)timeScriptableObject.sec} sec";
+        playerScoreText.text = $"{timeScriptableObject.score}";
     }
 }

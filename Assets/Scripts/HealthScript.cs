@@ -13,6 +13,9 @@ public class HealthScript : MonoBehaviour
     [SerializeField]
     private DisplayTimeScript displayTimeScript;
 
+    [SerializeField]
+    private DisplayScoreScript displayScoreScript;
+
     void Start()
     {
         health = 3;
@@ -26,6 +29,7 @@ public class HealthScript : MonoBehaviour
         {
             timeScriptableObject.min = displayTimeScript.minPassed;
             timeScriptableObject.sec = displayTimeScript.secPassed;
+            timeScriptableObject.score = displayScoreScript.score;
             ChangeToGameOverSceneScript.SwitchToGameOverScene();
         }
     }

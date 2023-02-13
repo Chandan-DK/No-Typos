@@ -6,6 +6,9 @@ public class DestroyCubeFromInputScript : MonoBehaviour
     [SerializeField]
     private ParticleSystem particles;
 
+    [SerializeField]
+    private DisplayScoreScript displayScoreScript;
+
     public void DestroyCube(char character)
     {
         CubeMoveScript[] cubes = GameObject.FindObjectsOfType<CubeMoveScript>();
@@ -21,6 +24,7 @@ public class DestroyCubeFromInputScript : MonoBehaviour
                 instantiatedParticle.Play();
                 CameraShakeScript.Invoke();
                 Destroy(cube.gameObject);
+                displayScoreScript.increaseScore();
                 break;
             }
         }
