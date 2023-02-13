@@ -4,6 +4,9 @@ using UnityEngine;
 public class DestroyCubeFromInputScript : MonoBehaviour
 {
     [SerializeField]
+    private AudioSource popSound;
+    
+    [SerializeField]
     private ParticleSystem particles;
 
     [SerializeField]
@@ -23,6 +26,7 @@ public class DestroyCubeFromInputScript : MonoBehaviour
                 ParticleSystem instantiatedParticle = Instantiate(particles, cube.transform.position, Quaternion.identity);
                 instantiatedParticle.Play();
                 CameraShakeScript.Invoke();
+                popSound.Play();
                 Destroy(cube.gameObject);
                 displayScoreScript.increaseScore();
                 break;

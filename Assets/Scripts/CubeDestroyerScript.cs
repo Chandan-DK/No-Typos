@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class CubeDestroyerScript : MonoBehaviour
 {
+    [SerializeField]
+    private AudioSource healthDecreaseSound;
+
     private HealthScript healthScript;
 
     [SerializeField]
@@ -25,7 +28,7 @@ public class CubeDestroyerScript : MonoBehaviour
 
         healthScript.DecreaseHealth();
 
-
+        healthDecreaseSound.Play();
         Destroy(collision.gameObject);
     }
 }
