@@ -2,7 +2,7 @@ using System;
 using TMPro;
 using UnityEngine;
 
-public class CubeGenerateScript : MonoBehaviour
+public class CubeGeneratorScript : MonoBehaviour
 {
     [SerializeField]
     private GameObject cube;
