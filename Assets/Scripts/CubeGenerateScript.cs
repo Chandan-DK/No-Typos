@@ -26,11 +26,11 @@ public class CubeGenerateScript : MonoBehaviour
     private float timeElapsed;
     private int noOfTimesSpawnSpeedDecreased;
 
-    private TimerScript timerScript;
+    private int increaseSpeedAfterSec;
 
     void Start()
     {
-        timerScript = GameObject.FindObjectOfType<TimerScript>();
+        increaseSpeedAfterSec = 20;
     }
 
     // Update is called once per frame
@@ -47,7 +47,7 @@ public class CubeGenerateScript : MonoBehaviour
 
         if (noOfTimesSpawnSpeedDecreased <= 5)
         {
-            if (timeElapsed >= timerScript.increaseSpeedAfterSec)
+            if (timeElapsed >= increaseSpeedAfterSec)
             {
                 if (noOfTimesSpawnSpeedDecreased < 2) spawnafterSec--;
                 else if (noOfTimesSpawnSpeedDecreased == 2) spawnafterSec = 0.9f;
