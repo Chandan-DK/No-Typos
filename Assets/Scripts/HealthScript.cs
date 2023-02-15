@@ -5,7 +5,7 @@ public class HealthScript : MonoBehaviour
     private int health;
 
     [SerializeField]
-    private Transform[] redHealths;
+    private Transform[] redHealthImageTransforms;
 
     [SerializeField]
     private TimeScriptableObject timeScriptableObject;
@@ -23,14 +23,23 @@ public class HealthScript : MonoBehaviour
 
     public void DecreaseHealth()
     {
-        redHealths[--health].gameObject.SetActive(false);
+        /* 
+        There are grey coloured healths already present at the back of the red hearts.
+        So disabling a red heart makes the grey heart visible
+        */
+        redHealthImageTransforms[--health].gameObject.SetActive(false);
 
         if (health == 0)
         {
-            timeScriptableObject.min = displayTimeScript.minPassed;
-            timeScriptableObject.sec = displayTimeScript.secPassed;
-            timeScriptableObject.score = displayScoreScript.score;
+            StoreStatsInScriptableObject();
             ChangeToGameOverSceneScript.SwitchToGameOverScene();
         }
+    }
+
+    private void StoreStatsInScriptableObject()
+    {
+        timeScriptableObject.min = displayTimeScript.minPassed;
+        timeScriptableObject.sec = displayTimeScript.secPassed;
+        timeScriptableObject.score = displayScoreScript.score;
     }
 }

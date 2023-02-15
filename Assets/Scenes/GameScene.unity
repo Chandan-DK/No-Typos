@@ -405,7 +405,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c32d5d9c6e1b04292831130014c4c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  redHealths:
+  redHealthImageTransforms:
   - {fileID: 1316592947}
   - {fileID: 1698064051}
   - {fileID: 136210783}
@@ -2624,6 +2624,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreText: {fileID: 1428942631}
+--- !u!1 &1657521489
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657521490}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657521490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1657521489}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.81, y: 1, z: -15.959999}
+  m_LocalScale: {x: 2, y: 2, z: 0.8333334}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1660332932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2669,10 +2700,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cube: {fileID: 1694361592614625268, guid: 14fa8871fbce95349932c42aac3215ef, type: 3}
-  cubeStartingPositionRight: {fileID: 512389335}
-  cubeStartingPositionLeft: {fileID: 761973900}
+  rightCubeStartingPosition: {x: 11, y: 1, z: -18.45}
+  leftCubeStartingPosition: {x: -12.8, y: 1, z: -15.9}
   moveDirection: {x: 0, y: 0, z: 0}
-  zOffset: 5
   spawnAfterSec: 3
 --- !u!1 &1698064050
 GameObject:

@@ -14,6 +14,11 @@ public class DisplayScoreAndTimeSurvivedScript : MonoBehaviour
 
     void Start()
     {
+        DisplayStats();
+    }
+
+    private void DisplayStats()
+    {
         timeText.text = $"{timeScriptableObject.min} min {(int)timeScriptableObject.sec} sec";
         playerScoreText.text = $"{timeScriptableObject.score}";
     }

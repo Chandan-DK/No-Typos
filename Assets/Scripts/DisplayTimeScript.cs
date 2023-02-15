@@ -21,6 +21,11 @@ public class DisplayTimeScript : MonoBehaviour
             secPassed = 0;
         }
 
+        DisplayTime();
+    }
+
+    private void DisplayTime()
+    {
         if (minPassed < 10)
         {
             if (secPassed < 10)

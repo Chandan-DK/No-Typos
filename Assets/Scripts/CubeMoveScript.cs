@@ -9,6 +9,8 @@ public class CubeMoveScript : MonoBehaviour
     void Start()
     {
         cubeSpeedGeneratorScript = GameObject.FindObjectOfType<CubeSpeedGeneratorScript>();
+
+        // Assign speed to the cube based on the row in which it is spawned
         if (transform.tag == "Right Cube0") cubeSpeed = -cubeSpeedGeneratorScript.speeds[0];
         else if (transform.tag == "Right Cube1") cubeSpeed = -cubeSpeedGeneratorScript.speeds[1];
         else if (transform.tag == "Right Cube2") cubeSpeed = -cubeSpeedGeneratorScript.speeds[2];

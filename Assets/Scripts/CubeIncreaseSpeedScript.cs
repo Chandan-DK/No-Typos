@@ -19,13 +19,18 @@ public class CubeIncreaseSpeedScript : MonoBehaviour
 
         if (noOfTimesToIncreaseSpeed > 0)
         {
-            if (timeInSec >= increaseSpeedAfterSec)
-            {
-                for (int i = 0; i < 4; i++) cubeSpeedGeneratorScript.speeds[i]++;
-                timeInSec = 0;
-                noOfTimesToIncreaseSpeed--;
-            }
+            IncreaseSpeed();
         }
 
+    }
+
+    private void IncreaseSpeed()
+    {
+        if (timeInSec >= increaseSpeedAfterSec)
+        {
+            for (int i = 0; i < 4; i++) cubeSpeedGeneratorScript.speeds[i]++;
+            timeInSec = 0;
+            noOfTimesToIncreaseSpeed--;
+        }
     }
 }

@@ -14,6 +14,10 @@ public class DestroyCubeFromInputScript : MonoBehaviour
 
     public void DestroyCube(char character)
     {
+        /*
+        CubeMoveScript is a component that is only attached to the moving cubes.
+        This helps us uniquely identify the moving cubes from the rest of the game objects in the scene
+        */
         CubeMoveScript[] cubes = GameObject.FindObjectsOfType<CubeMoveScript>();
 
         foreach (var cube in cubes)
@@ -28,7 +32,7 @@ public class DestroyCubeFromInputScript : MonoBehaviour
                 CameraShakeScript.Invoke();
                 popSound.Play();
                 Destroy(cube.gameObject);
-                displayScoreScript.increaseScore();
+                displayScoreScript.DisplayScore();
                 break;
             }
         }

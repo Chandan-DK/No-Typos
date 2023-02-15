@@ -15,6 +15,11 @@ public class CubeDestroyerScript : MonoBehaviour
 
     void OnTriggerEnter(Collider collision)
     {
+        DestroyCube(collision);
+    }
+
+    private void DestroyCube(Collider collision)
+    {
         noOfCubesDestroyed++;
 
         ParticleSystem instantiatedParticle = Instantiate(particle, collision.transform.position, Quaternion.identity);
