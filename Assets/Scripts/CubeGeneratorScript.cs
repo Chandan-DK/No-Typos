@@ -46,7 +46,10 @@ public class CubeGeneratorScript : MonoBehaviour
 
         if (noOfTimesSpawnSpeedDecreased <= 5)
         {
-            DecreaseSpawnSpeed();
+            if (timeElapsed >= increaseSpeedAfterSec)
+            {
+                DecreaseSpawnSpeed();
+            }
         }
     }
 
@@ -56,7 +59,7 @@ public class CubeGeneratorScript : MonoBehaviour
         float zOffset = distanceBetweenSuccessiveCubes * randomRowMultiplier;
 
         Vector3 instantiatedCubeInitialPosition;
-        
+
         bool isPositionRight = Convert.ToBoolean(UnityEngine.Random.Range(0, 2));
         if (!isPositionRight) instantiatedCubeInitialPosition = leftCubeStartingPosition;
         else instantiatedCubeInitialPosition = rightCubeStartingPosition;
@@ -89,16 +92,13 @@ public class CubeGeneratorScript : MonoBehaviour
 
     private void DecreaseSpawnSpeed()
     {
-        if (timeElapsed >= increaseSpeedAfterSec)
-            {
-                if (noOfTimesSpawnSpeedDecreased < 2) spawnAfterSec--;
-                else if (noOfTimesSpawnSpeedDecreased == 2) spawnAfterSec = 0.9f;
-                else if (noOfTimesSpawnSpeedDecreased == 3) spawnAfterSec = 0.8f;
-                else if (noOfTimesSpawnSpeedDecreased == 4) spawnAfterSec = 0.7f;
-                else if (noOfTimesSpawnSpeedDecreased == 5) spawnAfterSec = 0.5f;
-                else if (noOfTimesSpawnSpeedDecreased == 6) spawnAfterSec = 0.3f;
-                noOfTimesSpawnSpeedDecreased++;
-                timeElapsed = 0;
-            }
+        if (noOfTimesSpawnSpeedDecreased < 2) spawnAfterSec--;
+        else if (noOfTimesSpawnSpeedDecreased == 2) spawnAfterSec = 0.9f;
+        else if (noOfTimesSpawnSpeedDecreased == 3) spawnAfterSec = 0.8f;
+        else if (noOfTimesSpawnSpeedDecreased == 4) spawnAfterSec = 0.7f;
+        else if (noOfTimesSpawnSpeedDecreased == 5) spawnAfterSec = 0.5f;
+        else if (noOfTimesSpawnSpeedDecreased == 6) spawnAfterSec = 0.3f;
+        noOfTimesSpawnSpeedDecreased++;
+        timeElapsed = 0;
     }
 }
