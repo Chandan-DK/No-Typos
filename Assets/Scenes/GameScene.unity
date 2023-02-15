@@ -2673,7 +2673,7 @@ MonoBehaviour:
   cubeStartingPositionLeft: {fileID: 761973900}
   moveDirection: {x: 0, y: 0, z: 0}
   zOffset: 5
-  spawnafterSec: 3
+  spawnAfterSec: 3
 --- !u!1 &1698064050
 GameObject:
   m_ObjectHideFlags: 0

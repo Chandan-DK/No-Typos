@@ -19,7 +19,7 @@ public class CubeGeneratorScript : MonoBehaviour
     private float zOffset;
 
     [SerializeField]
-    private float spawnafterSec;
+    private float spawnAfterSec;
 
     private float timeInSec;
 
@@ -38,7 +38,7 @@ public class CubeGeneratorScript : MonoBehaviour
         timeInSec += Time.deltaTime;
         timeElapsed += Time.deltaTime;
 
-        if (timeInSec >= spawnafterSec)
+        if (timeInSec >= spawnAfterSec)
         {
             InstantiateCube();
             timeInSec = 0;
@@ -48,12 +48,12 @@ public class CubeGeneratorScript : MonoBehaviour
         {
             if (timeElapsed >= increaseSpeedAfterSec)
             {
-                if (noOfTimesSpawnSpeedDecreased < 2) spawnafterSec--;
-                else if (noOfTimesSpawnSpeedDecreased == 2) spawnafterSec = 0.9f;
-                else if (noOfTimesSpawnSpeedDecreased == 3) spawnafterSec = 0.8f;
-                else if (noOfTimesSpawnSpeedDecreased == 4) spawnafterSec = 0.7f;
-                else if (noOfTimesSpawnSpeedDecreased == 5) spawnafterSec = 0.5f;
-                else if (noOfTimesSpawnSpeedDecreased == 6) spawnafterSec = 0.3f;
+                if (noOfTimesSpawnSpeedDecreased < 2) spawnAfterSec--;
+                else if (noOfTimesSpawnSpeedDecreased == 2) spawnAfterSec = 0.9f;
+                else if (noOfTimesSpawnSpeedDecreased == 3) spawnAfterSec = 0.8f;
+                else if (noOfTimesSpawnSpeedDecreased == 4) spawnAfterSec = 0.7f;
+                else if (noOfTimesSpawnSpeedDecreased == 5) spawnAfterSec = 0.5f;
+                else if (noOfTimesSpawnSpeedDecreased == 6) spawnAfterSec = 0.3f;
                 noOfTimesSpawnSpeedDecreased++;
                 timeElapsed = 0;
             }
