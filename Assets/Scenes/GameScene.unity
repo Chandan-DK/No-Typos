@@ -988,6 +988,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthDecreaseSound: {fileID: 741906232}
+  healthScript: {fileID: 246189799}
   particle: {fileID: 5985678737798792434, guid: 8e103317c1f1aa64a83d80257b172b91,
     type: 3}
 --- !u!1 &708110441
@@ -1102,6 +1103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthDecreaseSound: {fileID: 741906232}
+  healthScript: {fileID: 246189799}
   particle: {fileID: 5985678737798792434, guid: 8e103317c1f1aa64a83d80257b172b91,
     type: 3}
 --- !u!54 &708110447

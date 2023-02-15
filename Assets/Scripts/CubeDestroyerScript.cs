@@ -5,17 +5,13 @@ public class CubeDestroyerScript : MonoBehaviour
     [SerializeField]
     private AudioSource healthDecreaseSound;
 
+    [SerializeField]
     private HealthScript healthScript;
 
     [SerializeField]
     private ParticleSystem particle;
 
     private int noOfCubesDestroyed;
-
-    void Start()
-    {
-        healthScript = GameObject.FindObjectOfType<HealthScript>();
-    }
 
     void OnTriggerEnter(Collider collision)
     {
