@@ -33,7 +33,6 @@ public class CubeGenerateScript : MonoBehaviour
         increaseSpeedAfterSec = 20;
     }
 
-    // Update is called once per frame
     void Update()
     {
         timeInSec += Time.deltaTime;

@@ -19,7 +19,6 @@ public class CubeMoveScript : MonoBehaviour
         else if (transform.tag == "Left Cube3") cubeSpeed = cubeSpeedGeneratorScript.speeds[0];
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(new Vector3(cubeSpeed, 0, 0) * Time.deltaTime);

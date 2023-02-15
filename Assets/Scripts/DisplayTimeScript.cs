@@ -11,7 +11,6 @@ public class DisplayTimeScript : MonoBehaviour
     [HideInInspector]
     public int minPassed;
 
-    // Update is called once per frame
     void Update()
     {
         secPassed += Time.deltaTime;

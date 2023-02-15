@@ -10,7 +10,6 @@ public class CubeSpeedGeneratorScript : MonoBehaviour
     [SerializeField]
     private float maxSpeed;
 
-    // Start is called before the first frame update
     void Start()
     {
         speeds = new float[8];

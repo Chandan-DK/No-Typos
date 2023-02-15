@@ -13,7 +13,6 @@ public class CubeIncreaseSpeedScript : MonoBehaviour
     [SerializeField]
     private int noOfTimesToIncreaseSpeed;
 
-    // Update is called once per frame
     void Update()
     {
         timeInSec += Time.deltaTime;
