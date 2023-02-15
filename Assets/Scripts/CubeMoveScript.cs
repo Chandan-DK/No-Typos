@@ -11,14 +11,14 @@ public class CubeMoveScript : MonoBehaviour
         cubeSpeedGeneratorScript = GameObject.FindObjectOfType<CubeSpeedGeneratorScript>();
 
         // Assign speed to the cube based on the row in which it is spawned
-        if (transform.tag == "Right Cube0") cubeSpeed = -cubeSpeedGeneratorScript.speeds[0];
-        else if (transform.tag == "Right Cube1") cubeSpeed = -cubeSpeedGeneratorScript.speeds[1];
-        else if (transform.tag == "Right Cube2") cubeSpeed = -cubeSpeedGeneratorScript.speeds[2];
-        else if (transform.tag == "Right Cube3") cubeSpeed = -cubeSpeedGeneratorScript.speeds[3];
-        else if (transform.tag == "Left Cube0") cubeSpeed = cubeSpeedGeneratorScript.speeds[3];
-        else if (transform.tag == "Left Cube1") cubeSpeed = cubeSpeedGeneratorScript.speeds[2];
-        else if (transform.tag == "Left Cube2") cubeSpeed = cubeSpeedGeneratorScript.speeds[1];
-        else if (transform.tag == "Left Cube3") cubeSpeed = cubeSpeedGeneratorScript.speeds[0];
+        if (transform.tag == "RightCube Row0") cubeSpeed = -cubeSpeedGeneratorScript.speeds[0];
+        else if (transform.tag == "RightCube Row1") cubeSpeed = -cubeSpeedGeneratorScript.speeds[1];
+        else if (transform.tag == "RightCube Row2") cubeSpeed = -cubeSpeedGeneratorScript.speeds[2];
+        else if (transform.tag == "RightCube Row3") cubeSpeed = -cubeSpeedGeneratorScript.speeds[3];
+        else if (transform.tag == "LeftCube Row0") cubeSpeed = cubeSpeedGeneratorScript.speeds[3];
+        else if (transform.tag == "LeftCube Row1") cubeSpeed = cubeSpeedGeneratorScript.speeds[2];
+        else if (transform.tag == "LeftCube Row2") cubeSpeed = cubeSpeedGeneratorScript.speeds[1];
+        else if (transform.tag == "LeftCube Row3") cubeSpeed = cubeSpeedGeneratorScript.speeds[0];
     }
 
     void Update()

@@ -77,14 +77,14 @@ public class CubeGeneratorScript : MonoBehaviour
         The moving cubes are tagged based on their 
         position (left or right) and the row in which they are spawned
         */
-        if ((randomRowMultiplier == 0) && isPositionRight) instantiatedCube.tag = "Right Cube0";
-        else if ((randomRowMultiplier == 0) && !isPositionRight) instantiatedCube.tag = "Left Cube0";
-        else if ((randomRowMultiplier == 1) && isPositionRight) instantiatedCube.tag = "Right Cube1";
-        else if ((randomRowMultiplier == 1) && !isPositionRight) instantiatedCube.tag = "Left Cube1";
-        else if ((randomRowMultiplier == 2) && isPositionRight) instantiatedCube.tag = "Right Cube2";
-        else if ((randomRowMultiplier == 2) && !isPositionRight) instantiatedCube.tag = "Left Cube2";
-        else if ((randomRowMultiplier == 3) && isPositionRight) instantiatedCube.tag = "Right Cube3";
-        else if ((randomRowMultiplier == 3) && !isPositionRight) instantiatedCube.tag = "Left Cube3";
+        if ((randomRowMultiplier == 0) && isPositionRight) instantiatedCube.tag = "RightCube Row0";
+        else if ((randomRowMultiplier == 0) && !isPositionRight) instantiatedCube.tag = "LeftCube Row0";
+        else if ((randomRowMultiplier == 1) && isPositionRight) instantiatedCube.tag = "RightCube Row1";
+        else if ((randomRowMultiplier == 1) && !isPositionRight) instantiatedCube.tag = "LeftCube Row1";
+        else if ((randomRowMultiplier == 2) && isPositionRight) instantiatedCube.tag = "RightCube Row2";
+        else if ((randomRowMultiplier == 2) && !isPositionRight) instantiatedCube.tag = "LeftCube Row2";
+        else if ((randomRowMultiplier == 3) && isPositionRight) instantiatedCube.tag = "RightCube Row3";
+        else if ((randomRowMultiplier == 3) && !isPositionRight) instantiatedCube.tag = "LeftCube Row3";
     }
 
     private void DecreaseSpawnSpeed()
