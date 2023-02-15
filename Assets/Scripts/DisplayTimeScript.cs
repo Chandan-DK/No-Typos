@@ -5,18 +5,11 @@ public class DisplayTimeScript : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI timerText;
-    private TimerScript timerScript;
 
     [HideInInspector]
     public float secPassed;
     [HideInInspector]
     public int minPassed;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        timerScript = GameObject.FindObjectOfType<TimerScript>();
-    }
 
     // Update is called once per frame
     void Update()
