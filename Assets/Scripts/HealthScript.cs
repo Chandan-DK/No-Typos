@@ -2,23 +2,23 @@ using UnityEngine;
 
 public class HealthScript : MonoBehaviour
 {
-    private int health;
+    private int _health;
 
     [SerializeField]
-    private Transform[] redHealthImageTransforms;
+    private Transform[] _redHealthImageTransforms;
 
     [SerializeField]
-    private TimeScriptableObject timeScriptableObject;
+    private TimeScriptableObject _timeScriptableObject;
 
     [SerializeField]
-    private DisplayTimeScript displayTimeScript;
+    private DisplayTimeScript _displayTimeScript;
 
     [SerializeField]
-    private DisplayScoreScript displayScoreScript;
+    private DisplayScoreScript _displayScoreScript;
 
     void Start()
     {
-        health = 3;
+        _health = 3;
     }
 
     public void DecreaseHealth()
@@ -27,19 +27,19 @@ public class HealthScript : MonoBehaviour
         There are grey coloured healths already present at the back of the red hearts.
         So disabling a red heart makes the grey heart visible
         */
-        redHealthImageTransforms[--health].gameObject.SetActive(false);
+        _redHealthImageTransforms[--_health].gameObject.SetActive(false);
 
-        if (health == 0)
+        if (_health == 0)
         {
-            StoreStatsInScriptableObject();
+            _StoreStatsInScriptableObject();
             ChangeToGameOverSceneScript.SwitchToGameOverScene();
         }
     }
 
-    private void StoreStatsInScriptableObject()
+    private void _StoreStatsInScriptableObject()
     {
-        timeScriptableObject.min = displayTimeScript.minPassed;
-        timeScriptableObject.sec = displayTimeScript.secPassed;
-        timeScriptableObject.score = displayScoreScript.score;
+        _timeScriptableObject.min = _displayTimeScript.minPassed;
+        _timeScriptableObject.sec = _displayTimeScript.secPassed;
+        _timeScriptableObject.score = _displayScoreScript.score;
     }
 }

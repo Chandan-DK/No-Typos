@@ -5,68 +5,68 @@ using UnityEngine;
 public class CubeGeneratorScript : MonoBehaviour
 {
     [SerializeField]
-    private GameObject cube;
+    private GameObject _cube;
 
     [SerializeField]
-    private Vector3 rightCubeStartingPosition;
+    private Vector3 _rightCubeStartingPosition;
     [SerializeField]
-    private Vector3 leftCubeStartingPosition;
-
-    [SerializeField]
-    private Vector3 moveDirection;
-
-    private float distanceBetweenSuccessiveCubes;
+    private Vector3 _leftCubeStartingPosition;
 
     [SerializeField]
-    private float spawnAfterSec;
+    private Vector3 _moveDirection;
 
-    private float timeInSec;
+    private float _distanceBetweenSuccessiveCubes;
 
-    private float timeElapsed;
-    private int noOfTimesSpawnSpeedDecreased;
+    [SerializeField]
+    private float _spawnAfterSec;
 
-    private int increaseSpeedAfterSec;
+    private float _timeInSec;
+
+    private float _timeElapsed;
+    private int _noOfTimesSpawnSpeedDecreased;
+
+    private int _increaseSpeedAfterSec;
 
     void Start()
     {
-        increaseSpeedAfterSec = 20;
-        distanceBetweenSuccessiveCubes = 5f;
+        _increaseSpeedAfterSec = 20;
+        _distanceBetweenSuccessiveCubes = 5f;
     }
 
     void Update()
     {
-        timeInSec += Time.deltaTime;
-        timeElapsed += Time.deltaTime;
+        _timeInSec += Time.deltaTime;
+        _timeElapsed += Time.deltaTime;
 
-        if (timeInSec >= spawnAfterSec)
+        if (_timeInSec >= _spawnAfterSec)
         {
-            InstantiateCube();
-            timeInSec = 0;
+            _InstantiateCube();
+            _timeInSec = 0;
         }
 
-        if (noOfTimesSpawnSpeedDecreased <= 5)
+        if (_noOfTimesSpawnSpeedDecreased <= 5)
         {
-            if (timeElapsed >= increaseSpeedAfterSec)
+            if (_timeElapsed >= _increaseSpeedAfterSec)
             {
-                DecreaseSpawnSpeed();
+                _DecreaseSpawnSpeed();
             }
         }
     }
 
-    private void InstantiateCube()
+    private void _InstantiateCube()
     {
         int randomRowMultiplier = UnityEngine.Random.Range(0, 4);
-        float zOffset = distanceBetweenSuccessiveCubes * randomRowMultiplier;
+        float zOffset = _distanceBetweenSuccessiveCubes * randomRowMultiplier;
 
         Vector3 instantiatedCubeInitialPosition;
 
         bool isPositionRight = Convert.ToBoolean(UnityEngine.Random.Range(0, 2));
-        if (!isPositionRight) instantiatedCubeInitialPosition = leftCubeStartingPosition;
-        else instantiatedCubeInitialPosition = rightCubeStartingPosition;
+        if (!isPositionRight) instantiatedCubeInitialPosition = _leftCubeStartingPosition;
+        else instantiatedCubeInitialPosition = _rightCubeStartingPosition;
 
         Vector3 offsetFromInitialPosition = instantiatedCubeInitialPosition + new Vector3(0, 0, zOffset);
 
-        GameObject instantiatedCube = Instantiate(cube, offsetFromInitialPosition, Quaternion.identity);
+        GameObject instantiatedCube = Instantiate(_cube, offsetFromInitialPosition, Quaternion.identity);
 
         /*
         ASCII value of A = 65
@@ -90,15 +90,15 @@ public class CubeGeneratorScript : MonoBehaviour
         else if ((randomRowMultiplier == 3) && !isPositionRight) instantiatedCube.tag = "LeftCube Row3";
     }
 
-    private void DecreaseSpawnSpeed()
+    private void _DecreaseSpawnSpeed()
     {
-        if (noOfTimesSpawnSpeedDecreased < 2) spawnAfterSec--;
-        else if (noOfTimesSpawnSpeedDecreased == 2) spawnAfterSec = 0.9f;
-        else if (noOfTimesSpawnSpeedDecreased == 3) spawnAfterSec = 0.8f;
-        else if (noOfTimesSpawnSpeedDecreased == 4) spawnAfterSec = 0.7f;
-        else if (noOfTimesSpawnSpeedDecreased == 5) spawnAfterSec = 0.5f;
-        else if (noOfTimesSpawnSpeedDecreased == 6) spawnAfterSec = 0.3f;
-        noOfTimesSpawnSpeedDecreased++;
-        timeElapsed = 0;
+        if (_noOfTimesSpawnSpeedDecreased == 0) _spawnAfterSec--;
+        else if (_noOfTimesSpawnSpeedDecreased == 1) _spawnAfterSec = 0.9f;
+        else if (_noOfTimesSpawnSpeedDecreased == 2) _spawnAfterSec = 0.8f;
+        else if (_noOfTimesSpawnSpeedDecreased == 3) _spawnAfterSec = 0.7f;
+        else if (_noOfTimesSpawnSpeedDecreased == 4) _spawnAfterSec = 0.6f;
+        else if (_noOfTimesSpawnSpeedDecreased == 5) _spawnAfterSec = 0.5f;
+        _noOfTimesSpawnSpeedDecreased++;
+        _timeElapsed = 0;
     }
 }

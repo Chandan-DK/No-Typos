@@ -5,16 +5,16 @@ using UnityEngine;
 public class CameraShakeScript : MonoBehaviour
 {
     [SerializeField]
-    private Transform mainCamera;
+    private Transform _mainCamera;
 
     [SerializeField]
-    private float shakeDuration;
+    private float _shakeDuration;
 
     [SerializeField]
-    private Vector3 positionStrength;
+    private Vector3 _positionStrength;
 
     [SerializeField]
-    private Vector3 rotationStrength;
+    private Vector3 _rotationStrength;
 
     public static event Action Shake;
 
@@ -35,8 +35,8 @@ public class CameraShakeScript : MonoBehaviour
 
     public void CameraShake()
     {
-        mainCamera.DOComplete();
-        mainCamera.DOShakePosition(shakeDuration, positionStrength);
-        mainCamera.DOShakeRotation(shakeDuration, rotationStrength);
+        _mainCamera.DOComplete();
+        _mainCamera.DOShakePosition(_shakeDuration, _positionStrength);
+        _mainCamera.DOShakeRotation(_shakeDuration, _rotationStrength);
     }
 }

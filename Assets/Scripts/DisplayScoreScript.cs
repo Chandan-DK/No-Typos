@@ -7,11 +7,11 @@ public class DisplayScoreScript : MonoBehaviour
     public int score;
 
     [SerializeField]
-    private TextMeshProUGUI scoreText;
+    private TextMeshProUGUI _scoreText;
 
     public void DisplayScore()
     {
         score++;
-        scoreText.text = "Score: " + score.ToString();
+        _scoreText.text = "Score: " + score.ToString();
     }
 }

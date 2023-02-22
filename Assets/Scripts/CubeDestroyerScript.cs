@@ -3,33 +3,33 @@ using UnityEngine;
 public class CubeDestroyerScript : MonoBehaviour
 {
     [SerializeField]
-    private AudioSource healthDecreaseSound;
+    private AudioSource _healthDecreaseSound;
 
     [SerializeField]
-    private HealthScript healthScript;
+    private HealthScript _healthScript;
 
     [SerializeField]
-    private ParticleSystem particle;
+    private ParticleSystem _particle;
 
-    private int noOfCubesDestroyed;
+    private int _noOfCubesDestroyed;
 
     void OnTriggerEnter(Collider collision)
     {
-        DestroyCube(collision);
+        _DestroyCube(collision);
     }
 
-    private void DestroyCube(Collider collision)
+    private void _DestroyCube(Collider collision)
     {
-        noOfCubesDestroyed++;
+        _noOfCubesDestroyed++;
 
-        ParticleSystem instantiatedParticle = Instantiate(particle, collision.transform.position, Quaternion.identity);
+        ParticleSystem instantiatedParticle = Instantiate(_particle, collision.transform.position, Quaternion.identity);
         instantiatedParticle.Play();
 
-        if (noOfCubesDestroyed < 3) CameraShakeScript.Invoke();
+        if (_noOfCubesDestroyed < 3) CameraShakeScript.Invoke();
 
-        healthScript.DecreaseHealth();
+        _healthScript.DecreaseHealth();
 
-        healthDecreaseSound.Play();
+        _healthDecreaseSound.Play();
         Destroy(collision.gameObject);
     }
 }

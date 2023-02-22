@@ -244,9 +244,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5effdde79a929de4b9da52e14d42f026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeText: {fileID: 1504923723}
-  playerScoreText: {fileID: 376595632}
-  timeScriptableObject: {fileID: 11400000, guid: 61909b1e465ca744db9a4570b2e8be05,
+  _timeText: {fileID: 1504923723}
+  _playerScoreText: {fileID: 376595632}
+  _timeScriptableObject: {fileID: 11400000, guid: 61909b1e465ca744db9a4570b2e8be05,
     type: 2}
 --- !u!1 &335550583
 GameObject:

@@ -4,22 +4,22 @@ using UnityEngine;
 public class DisplayScoreAndTimeSurvivedScript : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI timeText;
+    private TextMeshProUGUI _timeText;
 
     [SerializeField]
-    private TextMeshProUGUI playerScoreText;
+    private TextMeshProUGUI _playerScoreText;
 
     [SerializeField]
-    private TimeScriptableObject timeScriptableObject;
+    private TimeScriptableObject _timeScriptableObject;
 
     void Start()
     {
-        DisplayStats();
+        _DisplayStats();
     }
 
-    private void DisplayStats()
+    private void _DisplayStats()
     {
-        timeText.text = $"{timeScriptableObject.min} min {(int)timeScriptableObject.sec} sec";
-        playerScoreText.text = $"{timeScriptableObject.score}";
+        _timeText.text = $"{_timeScriptableObject.min} min {(int)_timeScriptableObject.sec} sec";
+        _playerScoreText.text = $"{_timeScriptableObject.score}";
     }
 }

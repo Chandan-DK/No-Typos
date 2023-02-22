@@ -4,7 +4,7 @@ using TMPro;
 public class DisplayTimeScript : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI timerText;
+    private TextMeshProUGUI _timerText;
 
     [HideInInspector]
     public float secPassed;
@@ -21,31 +21,31 @@ public class DisplayTimeScript : MonoBehaviour
             secPassed = 0;
         }
 
-        DisplayTime();
+        _DisplayTime();
     }
 
-    private void DisplayTime()
+    private void _DisplayTime()
     {
         if (minPassed < 10)
         {
             if (secPassed < 10)
             {
-                timerText.text = $"0{minPassed}:0{(int)secPassed}";
+                _timerText.text = $"0{minPassed}:0{(int)secPassed}";
             }
             else
             {
-                timerText.text = $"0{minPassed}:{(int)secPassed}";
+                _timerText.text = $"0{minPassed}:{(int)secPassed}";
             }
         }
         else
         {
             if (secPassed < 10)
             {
-                timerText.text = $"{minPassed}:0{(int)secPassed}";
+                _timerText.text = $"{minPassed}:0{(int)secPassed}";
             }
             else
             {
-                timerText.text = $"{minPassed}:{(int)secPassed}";
+                _timerText.text = $"{minPassed}:{(int)secPassed}";
             }
         }
     }

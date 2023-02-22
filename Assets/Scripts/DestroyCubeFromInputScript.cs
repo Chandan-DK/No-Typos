@@ -4,13 +4,13 @@ using UnityEngine;
 public class DestroyCubeFromInputScript : MonoBehaviour
 {
     [SerializeField]
-    private AudioSource popSound;
+    private AudioSource _popSound;
     
     [SerializeField]
-    private ParticleSystem particles;
+    private ParticleSystem _particles;
 
     [SerializeField]
-    private DisplayScoreScript displayScoreScript;
+    private DisplayScoreScript _displayScoreScript;
 
     public void DestroyCube(char character)
     {
@@ -27,12 +27,12 @@ public class DestroyCubeFromInputScript : MonoBehaviour
 
             if (text.Equals(character.ToString().ToUpper()))
             {
-                ParticleSystem instantiatedParticle = Instantiate(particles, cube.transform.position, Quaternion.identity);
+                ParticleSystem instantiatedParticle = Instantiate(_particles, cube.transform.position, Quaternion.identity);
                 instantiatedParticle.Play();
                 CameraShakeScript.Invoke();
-                popSound.Play();
+                _popSound.Play();
                 Destroy(cube.gameObject);
-                displayScoreScript.DisplayScore();
+                _displayScoreScript.DisplayScore();
                 break;
             }
         }

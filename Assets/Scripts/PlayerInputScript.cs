@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerInputScript : MonoBehaviour
 {
     [SerializeField]
-    private DestroyCubeFromInputScript destroyCubeFromInputScript;
+    private DestroyCubeFromInputScript _destroyCubeFromInputScript;
 
     void Update()
     {
@@ -18,7 +18,7 @@ public class PlayerInputScript : MonoBehaviour
 
             if (Input.GetKeyDown(character.ToString()))
             {
-                destroyCubeFromInputScript.DestroyCube(character);
+                _destroyCubeFromInputScript.DestroyCube(character);
             }
         }
     }

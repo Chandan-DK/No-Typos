@@ -2,35 +2,35 @@ using UnityEngine;
 
 public class CubeIncreaseSpeedScript : MonoBehaviour
 {
-    private float timeInSec;
+    private float _timeInSec;
 
     [SerializeField]
-    private float increaseSpeedAfterSec;
+    private float _increaseSpeedAfterSec;
 
     [SerializeField]
-    private CubeSpeedGeneratorScript cubeSpeedGeneratorScript;
+    private CubeSpeedGeneratorScript _cubeSpeedGeneratorScript;
 
     [SerializeField]
-    private int noOfTimesToIncreaseSpeed;
+    private int _noOfTimesToIncreaseSpeed;
 
     void Update()
     {
-        timeInSec += Time.deltaTime;
+        _timeInSec += Time.deltaTime;
 
-        if (noOfTimesToIncreaseSpeed > 0)
+        if (_noOfTimesToIncreaseSpeed > 0)
         {
-            IncreaseSpeed();
+            _IncreaseSpeed();
         }
 
     }
 
-    private void IncreaseSpeed()
+    private void _IncreaseSpeed()
     {
-        if (timeInSec >= increaseSpeedAfterSec)
+        if (_timeInSec >= _increaseSpeedAfterSec)
         {
-            for (int i = 0; i < 4; i++) cubeSpeedGeneratorScript.speeds[i]++;
-            timeInSec = 0;
-            noOfTimesToIncreaseSpeed--;
+            for (int i = 0; i < 4; i++) _cubeSpeedGeneratorScript.speeds[i]++;
+            _timeInSec = 0;
+            _noOfTimesToIncreaseSpeed--;
         }
     }
 }

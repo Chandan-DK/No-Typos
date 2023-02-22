@@ -6,18 +6,18 @@ public class CubeSpeedGeneratorScript : MonoBehaviour
     public float[] speeds;
 
     [SerializeField]
-    private float minSpeed;
+    private float _minSpeed;
     [SerializeField]
-    private float maxSpeed;
+    private float _maxSpeed;
 
     void Start()
     {
-        GenerateRandomSpeedForEachRow();
+        _GenerateRandomSpeedForEachRow();
     }
 
-    private void GenerateRandomSpeedForEachRow()
+    private void _GenerateRandomSpeedForEachRow()
     {
-        speeds = new float[8];
-        for (int i = 0; i < 8; i++) speeds[i] = Random.Range(minSpeed, maxSpeed);
+        speeds = new float[4];
+        for (int i = 0; i < 4; i++) speeds[i] = Random.Range(_minSpeed, _maxSpeed);
     }
 }
