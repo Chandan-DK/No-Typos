@@ -35,6 +35,12 @@ For more information on the devops part please check the Terraform repository li
 * Terraform files repository 👉 https://github.com/Chandan-DK/No-Typos-Terraform
 * Build files repository 👉 https://github.com/Chandan-DK/No-Typos-Build
 
+## Video 🎥
+
+Here's a video I made to showcase the hosting of the game using the above mentioned technologies
+
+<a href="https://youtu.be/Kw7LHTxzS3E"><img src="https://user-images.githubusercontent.com/103727912/226766236-59a7d08b-ad11-425a-90f0-6369d5e40e64.png" alt="ALT TEXT HERE" width="320" height="180"></a>
+
 ## Screenshots of The Game 📸
 
 <p>
